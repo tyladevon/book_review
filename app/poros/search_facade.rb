@@ -9,6 +9,7 @@ class SearchFacade
   end 
 
   def book_reviews
-    ReviewService.new(@title).search
+    info = ReviewService.new(@title).search
+    Review.new(info)
   end 
 end
