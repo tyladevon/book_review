@@ -1,12 +1,16 @@
-<h4 class="book-name"><%= book.name %></h4>
 
 <section class="book-info">
-  <p><%= book.author %></p>
-  <p><%= book.genre %></p>
+  <h4 class="name"><%= book.name %></h4>
+  <p class="author"><%= book.author %></p>
+  <p class="genre"><%= book.genre %></p>
 </section>
-
+<h4>Reviews</h4>
 <section class="reviews">
   <%= reviews.each_with_index do |review, index|%>
-    <p class="review-index">review.information</p>
+    <section class="review- <%= index %>">
+    <p class="summary"><%= review.summary %></p>
+    <p class="pub-date"><%= review.publication_date %></p>
+    <p class="reviewer"><%= review.reviewer %></p>
+    </section>
   <% end %>
 </section>
