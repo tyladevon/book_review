@@ -6,11 +6,13 @@ describe "As a User, when I visit the root page" do
       visit '/'
       fill_in :title, with: "The Man Who Saw Everything"
       click_on 'Find Book'
-      
+
       expect(current_path).to eq('/search')
 
+      expect(".book-name").to_not be_empty
+      expect(".book-name").to have_content("The Man Who Saw Everything")
+
       within(".book-info") do
-        expect(".title").to_not be_empty
         expect(".author").to_not be_empty
         expect(".genre").to_not be_empty
       end

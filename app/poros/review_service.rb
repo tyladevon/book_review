@@ -7,6 +7,7 @@ class ReviewService
     conn.get('/reviews.json') do |req|
       req.params['title'] = @title
       req.params['api-key'] =ENV['NYT_API']
+      end 
   end
 
   def conn
