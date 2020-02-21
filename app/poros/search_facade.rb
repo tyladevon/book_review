@@ -3,8 +3,9 @@ class SearchFacade
     @title = title
   end
 
-  def book_info
-    BookService.new(@title).search
+  def book_return
+    info = BookService.new(@title).search
+    Book.new(info)
   end 
 
   def book_reviews
