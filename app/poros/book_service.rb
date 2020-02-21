@@ -8,8 +8,9 @@ class BookService
   end
   
   def search
-    conn.get('/search.json') do |req|
+    results = conn.get('/search.json') do |req|
       req.params['title'] = @title
     end 
+    JSON.parse(results.body, symbolize_names: true)
   end 
 end 
