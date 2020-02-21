@@ -9,16 +9,13 @@ describe "As a User, when I visit the root page" do
 
       expect(current_path).to eq('/search')
 
-      expect(".book-name").to_not be_empty
-      expect(".book-name").to have_content("The Man Who Saw Everything")
-
       within(".book-info") do
-        expect(".author").to_not be_empty
-        expect(".genre").to_not be_empty
+        expect(page).to have_css('.name')
+        expect(page).to have_css('.author')
+        expect(page).to have_css('.genre')
       end
 
       within(".reviews") do
-        expect('.review-1').to_not be_empty
           within(".review-1") do 
             expect(".summary").to_not be_empty 
             expect(".pub-date").to_not be_empty
