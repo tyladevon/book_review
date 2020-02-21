@@ -1,0 +1,11 @@
+<h4><%= book.title %></h4>
+
+<section class="book-info">
+  <p></p>
+</section>
+
+<section class="reviews">
+  <%= reviews.each_with_index do |review, index|%>
+    <p class="review-index">review.information</p>
+  <% end %>
+</section>
