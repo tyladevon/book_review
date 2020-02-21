@@ -18,18 +18,19 @@ describe "As a User, when I visit the root page" do
       end
 
       within(".reviews") do
-        expect('.review-1').to_not be_empty 
+        expect('.review-1').to_not be_empty
+          within(".review-1") do 
+            expect(".summary").to_not be_empty 
+            expect(".pub-date").to_not be_empty
+            expect(".reviewer").to_not be_empty
+          end 
         expect('.review-2').to_not be_empty
+          within(".review-2") do 
+            expect(".summary").to_not be_empty 
+            expect(".pub-date").to_not be_empty
+            expect(".reviewer").to_not be_empty
+          end 
       end 
     end 
   end 
-end 
-
-# (Note: genres is referred to as "subjects" in the book search response)
-# I should also see:
-# - This book has 2 reviews from the New York Times
-#   (Note: reviews are the "summary" in the book review response)
-# - Review 1: ""The Man Who Saw Everything,"" which was longlisted for the Booker Prize, looks at masculinity through the perspective of a young historian who sneers at "authoritarian old men.""
-# Review Publication Date: 2019-10-09
-# - Review 2: "Deborah Levy's latest novel, "The Man Who Saw Everything," experiments with time travel, history and the endless complications of love."
-# Review Publication Date: 2019-10-15
+end
